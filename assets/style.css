@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('./img/bg01.png') rgb(103 124 87 / 31%);
+}
+
+.portfolio {
+    display: flex;
+    min-width: 600px;
+    max-width: 900px;
+    height: 400px;
+    margin: 4rem auto;
+    transition: 0.2s;
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+.portfolio:hover {
+    filter: blur(0px);
+}
+
+.image {
+    min-width: 65px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.image.active {
+    flex-grow: 5;
+    max-width: 600px;
+    margin: 0;
+    border-radius: 7px;
+    background-size: auto 100%;
+    box-shadow: 0 0 6px 1px black;
+}
+
+.image:not(.active) {
+    flex-grow: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 1px black;
+}
+
+.text-container {
+    width: 100%;
+    height: 400px;
+    visibility: hidden;
+    overflow: hidden;
+    transform: translateY(300px);
+    opacity: 0;
+    transition: 0.7s;
+    background: linear-gradient(0deg, black 0%, transparent 72%);
+    color: white;
+}
+
+.text {
+    position: absolute;
+    bottom: 3rem;
+    padding: 0 10px;
+}
+
+.active .text-container {
+    visibility: visible;
+    transform: translateY(0px);
+    opacity: 1;
+}
